@@ -1,19 +1,19 @@
 # AirCanvas ✋🎨
 
 A production-quality gesture-controlled virtual painting application.
-Draw naturally in the air using only your webcam — no mouse or touchscreen needed.
+Draw naturally in the air using only your webcam ; no mouse or touchscreen needed.
 
 ---
 
 ## Features
 
 - **Real-time hand tracking** via MediaPipe through cvzone
-- **Pinch gesture** — pinch thumb + index to draw; release to lift the pen
-- **Adaptive cursor smoothing** — jitter-free strokes while staying responsive
+- **Pinch gesture** : pinch thumb + index to draw; release to lift the pen
+- **Adaptive cursor smoothing** : jitter-free strokes while staying responsive
 - **Anti-aliased strokes** with rounded caps and dense interpolation
 - **Glassmorphism toolbar** with frosted-glass blur effect
 - **8-color palette**, brush tool, and eraser
-- **Adjustable brush size** (2 – 60 px)
+- **Adjustable brush size** (2 - 60 px)
 - **Undo / Redo** (up to 25 levels)
 - **Clear canvas** with undo support
 - **Save drawing** as PNG on a white background
