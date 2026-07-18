@@ -1,13 +1,9 @@
 """
 AirCanvas – Hand tracking module.
-
-Wraps cvzone HandDetector (MediaPipe backend) and exposes a clean,
-application-level interface for fingertip positions and pinch detection.
+Wraps cvzone HandDetector (MediaPipe backend) and exposes a clean, application-level interface for fingertip positions and pinch detection.
 """
 from __future__ import annotations
-
 from dataclasses import dataclass
-
 import cv2
 import numpy as np
 
