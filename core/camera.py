@@ -1,14 +1,11 @@
 """
 AirCanvas – Camera capture abstraction.
 
-Wraps OpenCV VideoCapture with resolution configuration and graceful
-fallback when the requested resolution is not supported by the hardware.
+Wraps OpenCV VideoCapture with resolution configuration and graceful fallback when the requested resolution is not supported by the hardware.
 """
 from __future__ import annotations
-
 import cv2
-import numpy as np
-
+import numpy as n
 from utils.constants import (
     CAMERA_FLIP,
     CAMERA_HEIGHT,
