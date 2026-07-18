@@ -1,8 +1,6 @@
 """
 AirCanvas – Entry point.
-
-Wires together the camera, hand tracker, drawing engine, and UI elements
-into the main application loop.
+Wires together the camera, hand tracker, drawing engine, and UI elements into the main application loop.
 
 Run with:
     python main.py
@@ -11,11 +9,10 @@ from __future__ import annotations
 
 import sys
 import time
-
 import cv2
 import numpy as np
 
-# ── Local imports ─────────────────────────────────────────────────────────────
+# ── Local imports ───
 from core.camera import Camera
 from core.canvas import Canvas
 from core.drawing import DrawingEngine, Tool
@@ -71,7 +68,7 @@ class AirCanvasApp:
         self._prev_time = time.monotonic()
         self._fps_str = "-- FPS"
 
-    # ── Lifecycle ──────────────────────────────────────────────────────────
+    # ── Lifecycle ────
 
     def setup(self, width: int, height: int) -> None:
         """Initialise subsystems once the actual frame resolution is known."""
@@ -127,7 +124,7 @@ class AirCanvasApp:
         cv2.destroyAllWindows()
         print("[AirCanvas] Goodbye.")
 
-    # ── Frame processing ───────────────────────────────────────────────────
+    # ── Frame processing ───
 
     def _process_frame(self, frame: np.ndarray) -> np.ndarray:
         """Run one frame of the pipeline and return the display image."""
@@ -137,14 +134,14 @@ class AirCanvasApp:
         assert self._cursor_renderer is not None
         assert self._status_bar is not None
 
-        # ── FPS ───────────────────────────────────────────────────────
+        # ── FPS ───
         now = time.monotonic()
         elapsed = now - self._prev_time
         self._prev_time = now
         self._fps_str = fps_string(elapsed)
         self._status_bar.set_fps(self._fps_str)
 
-        # ── Hand tracking ──────────────────────────────────────────────
+        # ── Hand tracking ───
         hand = self._tracker.process(frame)
 
         if hand.detected:
@@ -160,7 +157,7 @@ class AirCanvasApp:
         if cursor is not None:
             over_toolbar = self._toolbar.update(cursor, hand.is_pinching)
 
-        # ── Drawing logic ──────────────────────────────────────────────
+        # ── Drawing logic ──
         if cursor is not None and not over_toolbar:
             if hand.is_pinching:
                 if not self._engine.is_drawing:
@@ -171,7 +168,7 @@ class AirCanvasApp:
                 if self._engine.is_drawing:
                     self._engine.end_stroke()
 
-        # ── Compositing ────────────────────────────────────────────────
+        # ── Compositing ───
         # 1. Blend canvas onto camera feed
         display = self._canvas.composite_onto(frame)
 
@@ -200,8 +197,7 @@ class AirCanvasApp:
 
         return display
 
-    # ── Actions ────────────────────────────────────────────────────────────
-
+    # ── Actions ───
     def _do_clear(self) -> None:
         assert self._canvas is not None
         self._canvas.clear()
@@ -241,8 +237,7 @@ class AirCanvasApp:
         flag = cv2.WINDOW_FULLSCREEN if self._fullscreen else cv2.WINDOW_NORMAL
         cv2.setWindowProperty(WINDOW_TITLE, cv2.WND_PROP_FULLSCREEN, flag)
 
-    # ── Keyboard handling ──────────────────────────────────────────────────
-
+    # ── Keyboard handling ────
     def _handle_key(self, key: int) -> None:
         if key == 255 or key == -1:   # No key pressed (waitKey returns 255/−1)
             return
@@ -260,7 +255,7 @@ class AirCanvasApp:
             self._toggle_fullscreen()
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
+# ── Entry point ───
 
 def main() -> None:
     """Bootstrap and run AirCanvas."""
