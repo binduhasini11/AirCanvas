@@ -1,6 +1,5 @@
 """
 AirCanvas – Camera capture abstraction.
-
 Wraps OpenCV VideoCapture with resolution configuration and graceful fallback when the requested resolution is not supported by the hardware.
 """
 from __future__ import annotations
