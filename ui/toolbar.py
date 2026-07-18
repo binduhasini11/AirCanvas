@@ -1,9 +1,6 @@
 """
 AirCanvas – Floating glassmorphism toolbar.
-
-Arranges all toolbar buttons in a horizontal strip, renders the glass
-background, and handles pinch-based button activation with a cooldown to
-prevent unintended clicks while the user is drawing nearby.
+Arranges all toolbar buttons in a horizontal strip, renders the glass background, and handles pinch-based button activation with a cooldown to prevent unintended clicks while the user is drawing nearby.
 """
 from __future__ import annotations
 
@@ -11,7 +8,6 @@ from typing import Callable
 
 import cv2
 import numpy as np
-
 from core.drawing import DrawingEngine, Tool
 from ui.buttons import (
     BrushButton,
