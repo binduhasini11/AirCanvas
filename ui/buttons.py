@@ -1,22 +1,17 @@
 """
 AirCanvas – Button widgets for the floating toolbar.
-
-Each button is self-contained: it knows its bounding box, how to render
-itself, and whether the cursor is hovering over it.
+Each button is self-contained: it knows its bounding box, how to render itself, and whether the cursor is hovering over it.
 """
 from __future__ import annotations
-
 from abc import ABC, abstractmethod
 from typing import Callable
-
 import cv2
 import numpy as np
-
 from utils.colors import Color, UI
 from utils.helpers import draw_rounded_rect, put_text_centered
 
 
-# ── Base class ────────────────────────────────────────────────────────────────
+# ── Base class ───
 
 class ToolbarButton(ABC):
     """
@@ -49,8 +44,7 @@ class ToolbarButton(ABC):
         self.is_hovered = False
         self.is_active = False       # "selected" state (e.g. active color)
 
-    # ── Geometry helpers ───────────────────────────────────────────────────
-
+    # ── Geometry helpers ───
     def contains(self, px: int, py: int) -> bool:
         """Return True if pixel (px, py) is inside this button."""
         return (
@@ -62,7 +56,7 @@ class ToolbarButton(ABC):
     def center(self) -> tuple[int, int]:
         return (self.x + self.size // 2, self.y + self.size // 2)
 
-    # ── Rendering ──────────────────────────────────────────────────────────
+    # ── Rendering ───
 
     def draw(self, img: np.ndarray) -> None:
         """Render the button onto *img*."""
