@@ -1,23 +1,17 @@
 """
 AirCanvas – Cursor renderer.
-
-Draws a crosshair + brush-preview circle at the smoothed fingertip
-position, plus a pinch-state indicator.
+Draws a crosshair + brush-preview circle at the smoothed fingertip position, plus a pinch-state indicator.
 """
 from __future__ import annotations
-
 import cv2
 import numpy as np
-
 from core.drawing import DrawingEngine, Tool
 from utils.colors import UI
 from utils.constants import PINCH_THRESHOLD_PX
 
-
 class CursorRenderer:
     """
     Renders the virtual cursor and brush preview circle.
-
     Parameters
     ----------
     engine : DrawingEngine
@@ -52,7 +46,7 @@ class CursorRenderer:
         engine = self._engine
         radius = engine.effective_radius
 
-        # ── Brush preview circle ───────────────────────────────────────
+        # ── Brush preview circle ────
         if engine.tool == Tool.BRUSH:
             preview_color = engine.color.bgr()
         else:
@@ -63,7 +57,7 @@ class CursorRenderer:
         # Inner ring (tool color / eraser grey)
         cv2.circle(img, (cx, cy), radius, preview_color, 1, cv2.LINE_AA)
 
-        # ── Crosshair ──────────────────────────────────────────────────
+        # ── Crosshair ────
         arm = max(radius + 8, 14)
         gap = radius + 3
 
@@ -75,7 +69,7 @@ class CursorRenderer:
         cv2.line(img, (cx, cy - arm), (cx, cy - gap), cross_color, 1, cv2.LINE_AA)
         cv2.line(img, (cx, cy + gap), (cx, cy + arm), cross_color, 1, cv2.LINE_AA)
 
-        # ── Pinch indicator dot ────────────────────────────────────────
+        # ── Pinch indicator dot ─────
         indicator_color = (
             UI.PINCH_ACTIVE.bgr() if is_pinching else UI.PINCH_IDLE.bgr()
         )
