@@ -1,11 +1,7 @@
 """
 AirCanvas – Cursor position smoothing.
-
-Uses an exponential moving average (EMA) filter to reduce hand-tracking
-jitter while keeping latency minimal.  A separate velocity-based adaptive
-alpha adjusts smoothing dynamically: fast movements get less smoothing so
-the cursor stays responsive; slow, deliberate movements get more smoothing
-for fine control.
+Uses an exponential moving average (EMA) filter to reduce hand-tracking jitter while keeping latency minimal.
+A separate velocity-based adaptive alpha adjusts smoothing dynamically: fast movements get less smoothing so the cursor stays responsive; slow, deliberate movements get more smoothing for fine control.
 """
 from __future__ import annotations
 
