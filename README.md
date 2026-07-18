@@ -129,3 +129,30 @@ All tunable values live in `utils/constants.py`:
 - Python 3.8 – 3.11
 - Webcam
 - OpenCV, cvzone, MediaPipe, NumPy (see `requirements.txt`)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve AirCanvas, feel free to:
+
+- Report bugs or suggest new features by opening an Issue.
+- Submit improvements through Pull Requests.
+- Enhance gesture recognition, UI/UX, or drawing capabilities.
+
+Please ensure your changes are well-tested and follow the existing project structure and coding style.
+
+---
+
+## 👩‍💻 Author
+
+**Bindu Hasini**
+
+B.Tech CSE @ VIT Vellore • AI & Computer Vision Enthusiast
+
+- 🐙 GitHub: https://github.com/binduhasini11
+- 💼 LinkedIn: linkedin.com/in/bindu-hasini-b-5a38bb225/
+
+If you found this project interesting, consider ⭐ starring the repository!
