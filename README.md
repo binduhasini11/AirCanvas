@@ -1,6 +1,6 @@
 # AirCanvas ✋🎨
 
-A production-quality gesture-controlled virtual painting application.
+A gesture-controlled virtual painting application.
 Draw naturally in the air using only your webcam ; no mouse or touchscreen needed.
 
 ---
