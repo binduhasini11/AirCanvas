@@ -1,8 +1,7 @@
 """
 AirCanvas – Bottom status bar renderer.
 
-Displays FPS, current tool, brush size, and color swatch in a slim
-glassmorphism strip along the bottom of the frame.
+Displays FPS, current tool, brush size, and color swatch in a slim glassmorphism strip along the bottom of the frame.
 """
 from __future__ import annotations
 
