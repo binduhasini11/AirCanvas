@@ -1,8 +1,7 @@
 """
 AirCanvas – Canvas buffer management.
 
-Maintains the persistent drawing surface as a white BGR image, composites
-it over the live camera frame, and manages undo/redo history.
+Maintains the persistent drawing surface as a white BGR image, composites it over the live camera frame, and manages undo/redo history.
 """
 from __future__ import annotations
 
