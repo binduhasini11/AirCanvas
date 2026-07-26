@@ -35,7 +35,6 @@ from utils.constants import (
 )
 from utils.helpers import fps_string, save_canvas
 
-
 class AirCanvasApp:
     """
     Top-level application controller.
@@ -254,7 +253,6 @@ class AirCanvasApp:
         elif key == KEY_FULLSCREEN:
             self._toggle_fullscreen()
 
-
 # ── Entry point ───
 
 def main() -> None:
@@ -271,7 +269,6 @@ def main() -> None:
     except Exception as exc:
         print(f"[AirCanvas] Fatal error: {exc}")
         raise
-
 
 if __name__ == "__main__":
     main()
