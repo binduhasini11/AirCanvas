@@ -1,9 +1,7 @@
 """
 AirCanvas – Drawing engine.
 
-Handles all stroke rendering onto the Canvas layer with anti-aliasing,
-rounded caps, and dense interpolation so fast hand movements never leave
-gaps in strokes.
+Handles all stroke rendering onto the Canvas layer with anti-aliasing, rounded caps, and dense interpolation so fast hand movements never leave gaps in strokes.
 """
 from __future__ import annotations
 
