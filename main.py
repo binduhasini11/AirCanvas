@@ -254,7 +254,6 @@ class AirCanvasApp:
             self._toggle_fullscreen()
 
 # ── Entry point ───
-
 def main() -> None:
     """Bootstrap and run AirCanvas."""
     import os
