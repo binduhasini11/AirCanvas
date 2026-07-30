@@ -12,11 +12,9 @@ from utils.constants import (
     CAMERA_WIDTH,
 )
 
-
 class Camera:
     """
     Manages a single webcam capture session.
-
     Usage
     -----
     ::
@@ -33,7 +31,6 @@ class Camera:
         with Camera() as cam:
             frame = cam.read()
     """
-
     def __init__(
         self,
         index: int = CAMERA_INDEX,
@@ -50,7 +47,7 @@ class Camera:
         self._actual_width: int = width
         self._actual_height: int = height
 
-    # ── Lifecycle ──────────────────────────────────────────────────────────
+    # ──── Lifecycle ────
 
     def open(self) -> None:
         """Open the camera device and configure resolution."""
@@ -80,8 +77,7 @@ class Camera:
             self._cap.release()
             self._cap = None
 
-    # ── Context manager ────────────────────────────────────────────────────
-
+    # ── Context manager ──────────────────────
     def __enter__(self) -> "Camera":
         self.open()
         return self
@@ -89,7 +85,7 @@ class Camera:
     def __exit__(self, *_: object) -> None:
         self.release()
 
-    # ── Frame acquisition ──────────────────────────────────────────────────
+    # ── Frame acquisition ───────────────────
 
     def read(self) -> np.ndarray | None:
         """
@@ -109,7 +105,7 @@ class Camera:
             frame = cv2.flip(frame, 1)
         return frame
 
-    # ── Properties ────────────────────────────────────────────────────────
+    # ── Properties ───────────────────────────
 
     @property
     def width(self) -> int:
