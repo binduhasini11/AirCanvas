@@ -3,7 +3,6 @@ AirCanvas – Floating glassmorphism toolbar.
 Arranges all toolbar buttons in a horizontal strip, renders the glass background, and handles pinch-based button activation with a cooldown to prevent unintended clicks while the user is drawing nearby.
 """
 from __future__ import annotations
-
 from typing import Callable
 
 import cv2
@@ -30,7 +29,6 @@ from utils.constants import (
     TOOLBAR_PINCH_COOLDOWN_FRAMES,
 )
 from utils.helpers import apply_blur_glass, draw_rounded_rect, point_in_rect
-
 
 class Toolbar:
     """
