@@ -22,8 +22,7 @@ class Canvas:
     - ``_mask``    – Binary mask: 255 where a stroke has been painted,
                      0 elsewhere.  Used to composite over the camera.
 
-    Undo/Redo is implemented by storing copies of ``(_layer, _mask)``
-    at snapshot points (typically end of each stroke).
+    Undo/Redo is implemented by storing copies of ``(_layer, _mask)`` at snapshot points (typically end of each stroke).
 
     Parameters
     ----------
