@@ -81,7 +81,7 @@ class DrawingEngine:
     def is_drawing(self) -> bool:
         return self._is_drawing
 
-    # ── Brush size control ─────────────────────────────────────────────────
+    # ── Brush size control ──────────────────────────────────
 
     def increase_brush(self) -> None:
         self._brush_size = min(self._brush_size + BRUSH_SIZE_STEP, MAX_BRUSH_SIZE)
@@ -89,7 +89,7 @@ class DrawingEngine:
     def decrease_brush(self) -> None:
         self._brush_size = max(self._brush_size - BRUSH_SIZE_STEP, MIN_BRUSH_SIZE)
 
-    # ── Stroke lifecycle ───────────────────────────────────────────────────
+    # ── Stroke lifecycle ───────────────────────────────────────
 
     def begin_stroke(self, point: tuple[int, int]) -> None:
         """Start a new stroke at *point*."""
@@ -116,7 +116,7 @@ class DrawingEngine:
             self._prev_point = None
             self._canvas.push_snapshot()
 
-    # ── Rendering ─────────────────────────────────────────────────────────
+    # ── Rendering ────────────────────────────────────────────_
 
     def _paint_segment(
         self,
