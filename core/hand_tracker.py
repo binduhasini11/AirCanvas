@@ -75,8 +75,7 @@ class HandTracker:
         """
         Run hand detection on *frame* and return the updated :class:`HandState`.
 
-        The detector may draw debug overlays on *frame* if it is configured
-        to do so – this is disabled here to keep the frame clean.
+        The detector may draw debug overlays on *frame* if it is configured to do so – this is disabled here to keep the frame clean.
 
         Parameters
         ----------
